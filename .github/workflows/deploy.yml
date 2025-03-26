@@ -18,6 +18,8 @@ jobs:
               run: npm ci
             - name: Setup Pages
               uses: actions/configure-pages@v5
+            - name: Build it
+              run: npm run build
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
               with:
