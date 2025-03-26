@@ -13,6 +13,18 @@ on:
 # Jobs are what actually do the work. We can add as many jobs as we want.
 # These will be run in parallel.
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+
+
+
   hello_world_job:
     # As with workflow names (and even step names), job names are not
     # strictly required, but they are good practice.
